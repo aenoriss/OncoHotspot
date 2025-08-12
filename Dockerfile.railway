@@ -19,5 +19,5 @@ RUN chmod +x scripts/*.sh || true
 
 EXPOSE 3001
 
-# Start command - initialize database if needed, then start app
-CMD ["npm", "run", "start:prod"]
+# Start command - download database if needed, then start app
+CMD ["sh", "-c", "cd /app/backend && bash scripts/download-database.sh && npm start"]
