@@ -6,7 +6,11 @@ interface GeneData {
   mutationCount: number;
 }
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+// Ensure API URL has protocol
+let API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+if (API_BASE_URL && !API_BASE_URL.startsWith('http')) {
+  API_BASE_URL = `https://${API_BASE_URL}`;
+}
 
 const fetchGenesData = async (): Promise<GeneData[]> => {
   try {

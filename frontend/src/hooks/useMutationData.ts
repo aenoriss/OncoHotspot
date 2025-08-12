@@ -21,7 +21,11 @@ const MOCK_MUTATION_DATA: MutationData[] = [
   { gene: 'APC', cancerType: 'Colorectal Cancer', position: 1450, mutationCount: 87, significance: 0.92 }
 ];
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+// Ensure API URL has protocol
+let API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+if (API_BASE_URL && !API_BASE_URL.startsWith('http')) {
+  API_BASE_URL = `https://${API_BASE_URL}`;
+}
 
 const fetchMutationData = async (): Promise<MutationData[]> => {
   try {

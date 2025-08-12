@@ -735,7 +735,11 @@ function App() {
     
     // Test the API connection
     const testAPI = async () => {
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      let apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      // Add protocol if missing
+      if (apiUrl && !apiUrl.startsWith('http')) {
+        apiUrl = `https://${apiUrl}`;
+      }
       try {
         console.log('Testing backend at:', `${apiUrl}/health`);
         const response = await fetch(`${apiUrl}/health`);
