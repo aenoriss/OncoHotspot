@@ -21,6 +21,11 @@ build/
 data-processing/logs/*.json
 data-processing/test_results.json
 
+# Large data files - exclude all except sample
+data-processing/bronze/data/**/*.json
+data-processing/silver/data/**/*.json
+data-processing/gold/data/**/*.json
+
 # NOTE: Database and data files are tracked with Git LFS
 # See .gitattributes for LFS configuration
 
