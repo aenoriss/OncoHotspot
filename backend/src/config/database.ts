@@ -1,10 +1,15 @@
 import sqlite3 from 'sqlite3';
 import path from 'path';
+import { Pool } from 'pg';
 
 // Try multiple possible database locations
 const fs = require('fs');
+
+// Railway provides RAILWAY_VOLUME_MOUNT_PATH for volumes
+const volumePath = process.env.RAILWAY_VOLUME_MOUNT_PATH;
 const possiblePaths = [
   process.env.DATABASE_PATH,
+  volumePath ? path.join(volumePath, 'oncohotspot.db') : null,   // Railway volume mount
   path.resolve(__dirname, '../../database/oncohotspot.db'),      // dist/config -> database
   path.resolve(__dirname, '../database/oncohotspot.db'),         // dist -> database  
   path.resolve(__dirname, '../../../database/oncohotspot.db'),   // src/config -> database

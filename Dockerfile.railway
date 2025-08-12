@@ -1,33 +1,23 @@
-# Railway-specific Dockerfile with Git LFS support
+# Railway-specific Dockerfile 
 FROM node:18-alpine
 
-# Install git and git-lfs
-RUN apk add --no-cache git git-lfs
+# Install dependencies for runtime database download
+RUN apk add --no-cache git git-lfs bash
 
 WORKDIR /app
 
-# Copy everything
+# Copy everything except large files
 COPY . .
-
-# Pull LFS files (database)
-RUN git lfs install && git lfs pull || echo "LFS pull failed"
-
-# Check if database exists
-RUN ls -la database/ || echo "No database directory"
 
 # Install and build backend
 WORKDIR /app/backend
 RUN npm install
 RUN npm run build
 
-# Copy database to multiple locations as fallback
-RUN mkdir -p /app/backend/dist/database && \
-    cp -v /app/database/*.db* /app/backend/dist/database/ || echo "Failed to copy database"
-
-# Verify database exists
-RUN ls -la /app/database/ || echo "Database not in /app/database"
-RUN ls -la /app/backend/dist/database/ || echo "Database not in dist"
+# Make scripts executable
+RUN chmod +x scripts/*.sh || true
 
 EXPOSE 3001
 
-CMD ["npm", "start"]
+# Start command that downloads database if needed, then starts the app
+CMD ["sh", "-c", "./scripts/download-database.sh && npm start"]
