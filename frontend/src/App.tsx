@@ -209,9 +209,14 @@ function MainApp() {
             <Box sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
               <OncoHotspotLogo size={36} variant="icon" />
             </Box>
-            <Typography variant="h5" sx={{ color: 'text.primary', fontWeight: 700, flexGrow: 1 }}>
-              OncoHotspot
-            </Typography>
+            <Box sx={{ flexGrow: 1 }}>
+              <Typography variant="h5" sx={{ color: 'text.primary', fontWeight: 700 }}>
+                OncoHotspot
+              </Typography>
+              <Typography variant="caption" sx={{ color: 'text.secondary', fontSize: '0.65rem' }}>
+                © 2025 Joaquin Quiroga | MIT License
+              </Typography>
+            </Box>
             
             <ButtonGroup variant="outlined" size="small" sx={{ mr: 2 }}>
               <Button 

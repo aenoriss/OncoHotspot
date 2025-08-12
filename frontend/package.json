@@ -1,6 +1,8 @@
 {
   "name": "oncohotspot-frontend",
   "version": "0.1.0",
+  "author": "Joaquin Quiroga",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@types/node": "^16.18.0",
