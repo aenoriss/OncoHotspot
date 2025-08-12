@@ -1,0 +1,11 @@
+[phases.setup]
+aptPkgs = ["git-lfs"]
+
+[phases.build]
+cmds = [
+    "git lfs pull",
+    "cd backend && npm install && npm run build"
+]
+
+[start]
+cmd = "cd backend && npm start"
