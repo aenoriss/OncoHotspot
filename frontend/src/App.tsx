@@ -726,6 +726,36 @@ function MainApp() {
 }
 
 function App() {
+  // Debug: Log the API URL on mount
+  React.useEffect(() => {
+    console.log('=== OncoHotspot Frontend Debug ===');
+    console.log('Environment:', process.env.NODE_ENV);
+    console.log('API URL from env:', process.env.REACT_APP_API_URL);
+    console.log('API URL being used:', process.env.REACT_APP_API_URL || 'http://localhost:3001');
+    
+    // Test the API connection
+    const testAPI = async () => {
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      try {
+        console.log('Testing backend at:', `${apiUrl}/health`);
+        const response = await fetch(`${apiUrl}/health`);
+        const text = await response.text();
+        console.log('Raw response:', text);
+        
+        try {
+          const data = JSON.parse(text);
+          console.log('Backend health check:', data);
+        } catch (e) {
+          console.error('Response is not JSON:', text.substring(0, 200));
+        }
+      } catch (error) {
+        console.error('Backend connection failed:', error);
+        console.error('Make sure REACT_APP_API_URL is set correctly in Vercel');
+      }
+    };
+    testAPI();
+  }, []);
+  
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>

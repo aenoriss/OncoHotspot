@@ -25,7 +25,12 @@ const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
 const fetchMutationData = async (): Promise<MutationData[]> => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/api/mutations/all`);
+    const url = `${API_BASE_URL}/api/mutations/all`;
+    console.log('Fetching from URL:', url);
+    console.log('API_BASE_URL:', API_BASE_URL);
+    console.log('REACT_APP_API_URL:', process.env.REACT_APP_API_URL);
+    
+    const response = await axios.get(url);
     console.log('API Response:', response.data);
     if (response.data && response.data.data) {
       console.log(`Fetched ${response.data.data.length} mutations (ALL database records)`);
