@@ -1,0 +1,298 @@
+# Clinically actionable cancer genes for comprehensive analysis
+# Based on FDA-approved targeted therapies and clinical guidelines
+
+clinically_actionable_genes:
+  
+  # Receptor Tyrosine Kinases (RTKs)
+  rtk_genes:
+    - EGFR     # Erlotinib, Gefitinib, Osimertinib
+    - ERBB2    # Trastuzumab, Pertuzumab (HER2)
+    - ERBB3
+    - ERBB4
+    - ALK      # Crizotinib, Alectinib
+    - ROS1     # Crizotinib, Entrectinib
+    - MET      # Capmatinib, Tepotinib
+    - RET      # Selpercatinib, Pralsetinib
+    - NTRK1    # Larotrectinib, Entrectinib
+    - NTRK2
+    - NTRK3
+    - KIT      # Imatinib, Sunitinib
+    - PDGFRA   # Imatinib
+    - PDGFRB
+    - VEGFR1   # Anti-angiogenics
+    - VEGFR2
+    - VEGFR3
+    - FGFR1    # Erdafitinib
+    - FGFR2
+    - FGFR3
+    - FGFR4
+    - DDR2
+    - AXL
+    - IGF1R
+    - INSR
+    
+  # RAS/RAF/MEK Pathway
+  mapk_pathway:
+    - KRAS     # Sotorasib (G12C)
+    - NRAS     # MEK inhibitors
+    - HRAS
+    - BRAF     # Vemurafenib, Dabrafenib
+    - RAF1
+    - MAP2K1   # Trametinib (MEK1)
+    - MAP2K2   # MEK2
+    - MAPK1    # ERK1
+    - MAPK3    # ERK2
+    - NF1      # Neurofibromin
+    
+  # PI3K/AKT/mTOR Pathway
+  pi3k_pathway:
+    - PIK3CA   # Alpelisib
+    - PIK3CB
+    - PIK3CD
+    - PIK3CG
+    - PIK3R1
+    - PTEN     # Loss drives PI3K
+    - AKT1     # Capivasertib
+    - AKT2
+    - AKT3
+    - MTOR     # Everolimus, Temsirolimus
+    - TSC1     # mTOR regulation
+    - TSC2
+    - STK11    # LKB1
+    - RICTOR
+    - RPTOR
+    
+  # Cell Cycle & Apoptosis
+  cell_cycle:
+    - CDK4     # Palbociclib, Ribociclib
+    - CDK6     # Abemaciclib
+    - CDKN2A   # p16
+    - CDKN2B
+    - CCND1    # Cyclin D1
+    - CCND2
+    - CCND3
+    - CCNE1
+    - RB1      # Retinoblastoma
+    - TP53     # Multiple implications
+    - MDM2     # p53 inhibitor
+    - MDM4
+    - BCL2     # Venetoclax
+    - BCL2L1   # BCL-XL
+    - MCL1
+    
+  # DNA Damage Response
+  ddr_genes:
+    - BRCA1    # PARP inhibitors
+    - BRCA2    # Olaparib, Rucaparib
+    - PALB2
+    - ATM      # DNA damage checkpoint
+    - ATR
+    - CHEK1
+    - CHEK2
+    - RAD51
+    - RAD51B
+    - RAD51C
+    - RAD51D
+    - BRIP1
+    - BARD1
+    - NBN
+    - MRE11
+    - RAD50
+    
+  # Chromatin Modifiers
+  epigenetic:
+    - ARID1A   # SWI/SNF complex
+    - ARID1B
+    - ARID2
+    - SMARCA4  # BRG1
+    - SMARCB1
+    - PBRM1
+    - KMT2A    # MLL
+    - KMT2B
+    - KMT2C
+    - KMT2D
+    - KDM5A
+    - KDM5C
+    - KDM6A
+    - CREBBP
+    - EP300
+    - SETD2
+    - EZH2     # Tazemetostat
+    - DOT1L
+    - DNMT3A
+    - TET2
+    - IDH1     # Ivosidenib
+    - IDH2     # Enasidenib
+    
+  # Transcription Factors
+  transcription_factors:
+    - MYC      # Indirect targeting
+    - MYCN
+    - MYCL
+    - JUN
+    - FOS
+    - STAT3
+    - STAT5A
+    - STAT5B
+    - NOTCH1
+    - NOTCH2
+    - NOTCH3
+    - CTNNB1   # Beta-catenin
+    - APC      # Wnt pathway
+    - RUNX1
+    - ETV1
+    - ETV4
+    - ETV5
+    - ETV6
+    - ERG
+    
+  # JAK/STAT Pathway
+  jak_stat:
+    - JAK1     # Ruxolitinib
+    - JAK2     # Fedratinib
+    - JAK3
+    - TYK2
+    - STAT1
+    - STAT2
+    - STAT3
+    - STAT4
+    - STAT5A
+    - STAT5B
+    - STAT6
+    
+  # Other Kinases
+  other_kinases:
+    - ABL1     # Imatinib (BCR-ABL)
+    - ABL2
+    - SRC      # Dasatinib
+    - LYN
+    - LCK
+    - BTK      # Ibrutinib
+    - CSF1R
+    - FLT3     # Midostaurin, Gilteritinib
+    - CDK12
+    - AURKA
+    - AURKB
+    - PLK1
+    - WEE1
+    - CHEK1
+    
+  # Tumor Suppressors
+  tumor_suppressors:
+    - VHL      # Renal cell carcinoma
+    - SMAD4    # TGF-beta pathway
+    - SMAD2
+    - FBXW7
+    - KEAP1
+    - CUL3
+    - NFE2L2   # NRF2
+    - CDKN1A   # p21
+    - CDKN1B   # p27
+    - PTCH1
+    - SUFU
+    - NF2
+    - LATS1
+    - LATS2
+    - STK3
+    - STK4
+    
+  # Immune Checkpoints & Modulators
+  immune_related:
+    - PD1      # Pembrolizumab
+    - PDL1     # Atezolizumab
+    - CTLA4    # Ipilimumab
+    - LAG3
+    - TIM3
+    - TIGIT
+    - CD274    # PD-L1
+    - PDCD1    # PD-1
+    - B2M      # Beta-2 microglobulin
+    - JAK1     # Interferon signaling
+    - JAK2
+    
+  # MMR/MSI Genes
+  mmr_genes:
+    - MLH1     # Microsatellite instability
+    - MSH2     # Immunotherapy response
+    - MSH6
+    - PMS2
+    - EPCAM
+    - POLE
+    - POLD1
+    
+  # Fusion Partners
+  fusion_genes:
+    - TMPRSS2
+    - EML4
+    - NPM1
+    - BCR
+    - EWSR1
+    - FUS
+    - SS18
+    - NCOA4
+    - STRN
+    - CD74
+    - SLC34A2
+    - TPM3
+    - TFG
+    
+# Therapeutic associations by mutation type
+therapeutic_associations:
+  
+  EGFR:
+    L858R: ["Osimertinib", "Erlotinib", "Gefitinib"]
+    T790M: ["Osimertinib"]
+    exon19del: ["Osimertinib", "Erlotinib", "Afatinib"]
+    exon20ins: ["Mobocertinib", "Amivantamab"]
+    
+  BRAF:
+    V600E: ["Vemurafenib", "Dabrafenib", "Encorafenib"]
+    V600K: ["Vemurafenib", "Dabrafenib"]
+    
+  KRAS:
+    G12C: ["Sotorasib", "Adagrasib"]
+    G12D: ["MRTX1133 (trial)"]
+    
+  ALK:
+    fusion: ["Crizotinib", "Alectinib", "Brigatinib", "Lorlatinib"]
+    
+  ROS1:
+    fusion: ["Crizotinib", "Entrectinib", "Repotrectinib"]
+    
+  NTRK1_2_3:
+    fusion: ["Larotrectinib", "Entrectinib"]
+    
+  RET:
+    fusion: ["Selpercatinib", "Pralsetinib"]
+    M918T: ["Selpercatinib", "Pralsetinib"]
+    
+  MET:
+    exon14skip: ["Capmatinib", "Tepotinib"]
+    amplification: ["Crizotinib"]
+    
+  ERBB2:
+    amplification: ["Trastuzumab", "Pertuzumab", "T-DM1"]
+    mutation: ["Neratinib", "Tucatinib"]
+    
+  PIK3CA:
+    H1047R: ["Alpelisib"]
+    E545K: ["Alpelisib"]
+    E542K: ["Alpelisib"]
+    
+  IDH1:
+    R132: ["Ivosidenib"]
+    
+  IDH2:
+    R140: ["Enasidenib"]
+    R172: ["Enasidenib"]
+    
+  FLT3:
+    ITD: ["Midostaurin", "Gilteritinib", "Quizartinib"]
+    TKD: ["Midostaurin", "Gilteritinib"]
+    
+  BRCA1_2:
+    mutation: ["Olaparib", "Rucaparib", "Niraparib", "Talazoparib"]
+    
+  FGFR2_3:
+    fusion: ["Erdafitinib", "Pemigatinib", "Infigratinib"]
+    mutation: ["Erdafitinib"]

@@ -1,0 +1,815 @@
+# Expanded list of 500+ cancer-associated genes
+# Sources: COSMIC Cancer Gene Census, CIViC, OncoKB, OpenTargets
+
+cancer_genes:
+  
+  # Tier 1: FDA-approved drug targets (highest priority)
+  tier1_fda_targets:
+    - EGFR      # Osimertinib, Erlotinib, Gefitinib, Afatinib
+    - ERBB2     # Trastuzumab, Pertuzumab, T-DM1 (HER2)
+    - ALK       # Crizotinib, Alectinib, Brigatinib, Lorlatinib
+    - ROS1      # Crizotinib, Entrectinib, Ceritinib
+    - BRAF      # Vemurafenib, Dabrafenib, Encorafenib
+    - MEK1      # Trametinib, Cobimetinib, Binimetinib
+    - MEK2      # Trametinib, Cobimetinib
+    - KIT       # Imatinib, Sunitinib, Regorafenib
+    - PDGFRA    # Imatinib, Sunitinib, Avapritinib
+    - PDGFRB    # Imatinib, Sunitinib, Dasatinib
+    - MET       # Capmatinib, Tepotinib, Crizotinib
+    - RET       # Selpercatinib, Pralsetinib
+    - NTRK1     # Larotrectinib, Entrectinib
+    - NTRK2     # Larotrectinib, Entrectinib
+    - NTRK3     # Larotrectinib, Entrectinib
+    - FGFR1     # Erdafitinib, Pemigatinib
+    - FGFR2     # Erdafitinib, Pemigatinib, Futibatinib
+    - FGFR3     # Erdafitinib
+    - IDH1      # Ivosidenib
+    - IDH2      # Enasidenib
+    - FLT3      # Midostaurin, Gilteritinib, Quizartinib
+    - BCR       # BCR-ABL: Imatinib, Dasatinib, Nilotinib
+    - ABL1      # Imatinib, Dasatinib, Nilotinib, Bosutinib
+    - BTK       # Ibrutinib, Acalabrutinib, Zanubrutinib
+    - PIK3CA    # Alpelisib
+    - AKT1      # Capivasertib
+    - MTOR      # Everolimus, Temsirolimus
+    - CDK4      # Palbociclib, Ribociclib, Abemaciclib
+    - CDK6      # Palbociclib, Ribociclib, Abemaciclib
+    - PARP1     # Olaparib, Rucaparib, Niraparib
+    - BRCA1     # PARP inhibitors
+    - BRCA2     # PARP inhibitors
+    - HRD       # Homologous recombination deficiency
+    - PD1       # Pembrolizumab, Nivolumab
+    - PDL1      # Atezolizumab, Durvalumab, Avelumab
+    - CTLA4     # Ipilimumab
+    - VEGFA     # Bevacizumab
+    - VEGFR1    # Sunitinib, Sorafenib, Pazopanib
+    - VEGFR2    # Sunitinib, Sorafenib, Axitinib
+    - VEGFR3    # Sunitinib, Sorafenib
+    - KRAS      # Sotorasib (G12C), Adagrasib (G12C)
+    - ESR1      # Tamoxifen, Fulvestrant, Aromatase inhibitors
+    - AR        # Enzalutamide, Abiraterone, Apalutamide
+    - SMO       # Vismodegib, Sonidegib
+    - EZH2      # Tazemetostat
+    
+  # Tier 2: Oncogenes and tumor suppressors (COSMIC Tier 1)
+  tier2_cosmic_tier1:
+    - TP53
+    - NRAS
+    - HRAS
+    - PIK3CB
+    - PIK3R1
+    - PTEN
+    - AKT2
+    - AKT3
+    - TSC1
+    - TSC2
+    - STK11
+    - NF1
+    - NF2
+    - CDKN2A
+    - CDKN2B
+    - RB1
+    - MYC
+    - MYCN
+    - MYCL
+    - CCND1
+    - CCND2
+    - CCND3
+    - CCNE1
+    - CDK2
+    - E2F1
+    - MDM2
+    - MDM4
+    - ATM
+    - ATR
+    - CHEK1
+    - CHEK2
+    - WEE1
+    - AURKA
+    - AURKB
+    - PLK1
+    - ERBB3
+    - ERBB4
+    - RAF1
+    - MAP2K1
+    - MAP2K2
+    - MAPK1
+    - MAPK3
+    - JUN
+    - FOS
+    - STAT3
+    - STAT5A
+    - STAT5B
+    - JAK1
+    - JAK2
+    - JAK3
+    - SRC
+    - YES1
+    - FYN
+    - LCK
+    - LYN
+    - ABL2
+    - CSF1R
+    - FLT1
+    - FLT4
+    - FGFR4
+    - IGF1R
+    - INSR
+    - EPHB2
+    - EPHA2
+    - AXL
+    - DDR1
+    - DDR2
+    
+  # Tier 3: Chromatin modifiers and epigenetic regulators
+  tier3_epigenetic:
+    - DNMT1
+    - DNMT3A
+    - DNMT3B
+    - TET1
+    - TET2
+    - TET3
+    - HDAC1
+    - HDAC2
+    - HDAC3
+    - HDAC4
+    - KMT2A  # MLL
+    - KMT2B
+    - KMT2C
+    - KMT2D
+    - KDM1A
+    - KDM2A
+    - KDM4A
+    - KDM5A
+    - KDM5B
+    - KDM6A
+    - SETD2
+    - SMARCA4
+    - SMARCB1
+    - ARID1A
+    - ARID1B
+    - ARID2
+    - PBRM1
+    - BRD4
+    - CREBBP
+    - EP300
+    - NCOR1
+    - NCOR2
+    
+  # Tier 4: Transcription factors
+  tier4_transcription_factors:
+    - RUNX1
+    - RUNX2
+    - RUNX3
+    - ETV1
+    - ETV4
+    - ETV5
+    - ETV6
+    - ERG
+    - FLI1
+    - PAX3
+    - PAX5
+    - PAX7
+    - PAX8
+    - SOX2
+    - SOX9
+    - SOX10
+    - MITF
+    - TFEB
+    - TFE3
+    - GATA1
+    - GATA2
+    - GATA3
+    - GATA4
+    - GATA6
+    - FOX01
+    - FOXO3
+    - FOXP1
+    - FOXA1
+    - TCF7L2
+    - LEF1
+    - CTNNB1  # Beta-catenin
+    - APC
+    - AXIN1
+    - AXIN2
+    - GSK3B
+    
+  # Tier 5: Cell cycle and apoptosis
+  tier5_cell_cycle:
+    - CCNA1
+    - CCNA2
+    - CCNB1
+    - CCNB2
+    - CCNE2
+    - CDK1
+    - CDK7
+    - CDK8
+    - CDK9
+    - CDK12
+    - CDKN1A  # p21
+    - CDKN1B  # p27
+    - CDKN2C
+    - CDKN2D
+    - BCL2
+    - BCL2L1  # BCL-XL
+    - MCL1
+    - BCL2L11  # BIM
+    - BAX
+    - BAK1
+    - APAF1
+    - CASP3
+    - CASP7
+    - CASP8
+    - CASP9
+    - CASP10
+    - XIAP
+    - BIRC2
+    - BIRC3
+    - BIRC5  # Survivin
+    
+  # Tier 6: DNA damage response
+  tier6_dna_repair:
+    - BRIP1
+    - PALB2
+    - RAD51
+    - RAD51B
+    - RAD51C
+    - RAD51D
+    - RAD52
+    - RAD54L
+    - XRCC2
+    - XRCC3
+    - FANCA
+    - FANCB
+    - FANCC
+    - FANCD2
+    - FANCE
+    - FANCF
+    - FANCG
+    - FANCI
+    - FANCL
+    - FANCM
+    - MLH1
+    - MSH2
+    - MSH3
+    - MSH6
+    - PMS1
+    - PMS2
+    - POLE
+    - POLD1
+    - ERCC1
+    - ERCC2
+    - ERCC3
+    - ERCC4
+    - ERCC5
+    - XPA
+    - XPC
+    - LIG1
+    - LIG3
+    - LIG4
+    - PRKDC  # DNA-PKcs
+    - XRCC5  # Ku80
+    - XRCC6  # Ku70
+    - NBN
+    - MRE11
+    - RAD50
+    
+  # Tier 7: Tumor microenvironment and immune
+  tier7_immune:
+    - CD274  # PD-L1
+    - PDCD1  # PD-1
+    - PDCD1LG2  # PD-L2
+    - CD80
+    - CD86
+    - ICOS
+    - TIGIT
+    - LAG3
+    - TIM3
+    - CD47
+    - SIRPA
+    - CSF1
+    - CCL2
+    - CCL5
+    - CXCL8
+    - CXCL12
+    - CXCR4
+    - IL6
+    - IL6R
+    - IL10
+    - TGFB1
+    - TGFBR1
+    - TGFBR2
+    - IFNG
+    - IFNGR1
+    - IFNGR2
+    - TNF
+    - TNFRSF1A
+    - TNFRSF1B
+    - FAS
+    - FASLG
+    
+  # Tier 8: Metabolism
+  tier8_metabolism:
+    - SLC2A1  # GLUT1
+    - HK2
+    - PKM
+    - LDHA
+    - LDHB
+    - PDK1
+    - PDK2
+    - PDK3
+    - PDK4
+    - ACLY
+    - FASN
+    - SCD
+    - SREBF1
+    - SREBF2
+    - HMGCR
+    - SQLE
+    - FDPS
+    - GLS
+    - GLUD1
+    - GOT1
+    - GOT2
+    - ASS1
+    - ASL
+    - ARG1
+    - ARG2
+    - ODC1
+    - AMD1
+    - SRM
+    - SMS
+    
+  # Tier 9: Angiogenesis
+  tier9_angiogenesis:
+    - HIF1A
+    - EPAS1  # HIF2A
+    - VHL
+    - VEGFB
+    - VEGFC
+    - VEGFD
+    - PGF
+    - ANGPT1
+    - ANGPT2
+    - TEK  # TIE2
+    - NRP1
+    - NRP2
+    - PDGFA
+    - PDGFB
+    - PDGFC
+    - PDGFD
+    - FGF1
+    - FGF2
+    - FGFR1
+    - EGF
+    - TGFA
+    - AREG
+    - EREG
+    - BTC
+    - HBEGF
+    
+  # Tier 10: Invasion and metastasis
+  tier10_metastasis:
+    - CDH1  # E-cadherin
+    - CDH2  # N-cadherin
+    - VIM   # Vimentin
+    - SNAI1  # Snail
+    - SNAI2  # Slug
+    - TWIST1
+    - TWIST2
+    - ZEB1
+    - ZEB2
+    - MMP1
+    - MMP2
+    - MMP3
+    - MMP7
+    - MMP9
+    - MMP13
+    - MMP14
+    - TIMP1
+    - TIMP2
+    - TIMP3
+    - ADAM10
+    - ADAM17
+    - ADAMTS1
+    - CTSB
+    - CTSD
+    - CTSL
+    - PLAU  # uPA
+    - PLAUR  # uPAR
+    - SERPINE1  # PAI-1
+    
+  # Tier 11: Fusion genes and translocations
+  tier11_fusions:
+    - BCR
+    - ABL1
+    - EWS
+    - FLI1
+    - TMPRSS2
+    - ERG
+    - ETV1
+    - EML4
+    - ALK
+    - NPM1
+    - RARA
+    - PML
+    - MLL  # KMT2A
+    - AF4
+    - AF9
+    - ENL
+    - AF10
+    - NTRK1
+    - NTRK2
+    - NTRK3
+    - RET
+    - ROS1
+    - FGFR1
+    - FGFR2
+    - FGFR3
+    - TACC1
+    - TACC2
+    - TACC3
+    
+  # Tier 12: Additional cancer genes from COSMIC
+  tier12_cosmic_additional:
+    - ACVR1
+    - ACVR1B
+    - AJUBA
+    - AKAP9
+    - AMER1
+    - ANK1
+    - ANKRD11
+    - APOB
+    - ARHGAP26
+    - ARHGAP35
+    - ARHGEF12
+    - ARID5B
+    - ATRX
+    - BACH2
+    - BAP1
+    - BARD1
+    - BBC3
+    - BCL10
+    - BCL11A
+    - BCL11B
+    - BCL3
+    - BCL6
+    - BCL7A
+    - BCL9
+    - BCL9L
+    - BCLAF1
+    - BCOR
+    - BCORL1
+    - BLM
+    - BMPR1A
+    - BRAF
+    - BRD3
+    - BRD7
+    - BRSK1
+    - BTG1
+    - BTG2
+    - BUB1B
+    - C11orf30
+    - CACNA1D
+    - CALR
+    - CAMTA1
+    - CARD11
+    - CARS
+    - CASC5
+    - CASP3
+    - CBFA2T3
+    - CBFB
+    - CBL
+    - CBLB
+    - CBLC
+    - CCDC6
+    - CD22
+    - CD28
+    - CD70
+    - CD74
+    - CD79A
+    - CD79B
+    - CDC73
+    - CDH10
+    - CDH11
+    - CDH17
+    - CDK13
+    - CDKN1C
+    - CEBPA
+    - CEP89
+    - CHCHD7
+    - CHD2
+    - CHD4
+    - CHD7
+    - CHD8
+    - CHEK1
+    - CHIC2
+    - CIC
+    - CLIP1
+    - CLP1
+    - CLTC
+    - CLTCL1
+    - CNBD1
+    - CNBP
+    - CNOT3
+    - CNTNAP2
+    - COL1A1
+    - COL2A1
+    - COL3A1
+    - CREB1
+    - CREB3L1
+    - CREB3L2
+    - CRLF2
+    - CRNKL1
+    - CRTC1
+    - CRTC3
+    - CSF3R
+    - CSMD3
+    - CTCF
+    - CTNNA1
+    - CTNNA2
+    - CTNNB1
+    - CTNND1
+    - CTNND2
+    - CUL3
+    - CUL4A
+    - CUL4B
+    - CUX1
+    - CXCR7
+    - CYLD
+    - CYP2C8
+    - CYP2D6
+    - CYSLTR2
+    - DAXX
+    - DCC
+    - DCUN1D1
+    - DDB2
+    - DDIT3
+    - DDR2
+    - DDX10
+    - DDX3X
+    - DDX41
+    - DDX5
+    - DDX6
+    - DEK
+    - DGCR8
+    - DICER1
+    - DIS3
+    - DKC1
+    - DLEC1
+    - DLG2
+    - DNAJB1
+    - DNM2
+    - DNMT1
+    - DOCK8
+    - DOT1L
+    - DROSHA
+    - DST
+    - DUSP22
+    - DUSP4
+    - DUSP9
+    - DUX4
+    - E2F3
+    - EBF1
+    - ECT2L
+    - EED
+    - EGFL7
+    - EGR1
+    - EIF1AX
+    - EIF3E
+    - EIF4A2
+    - EIF4E
+    - ELF3
+    - ELF4
+    - ELK4
+    - ELL
+    - ELN
+    - ELOC
+    - EMSY
+    - EP400
+    - EPAS1
+    - EPCAM
+    - EPHA3
+    - EPHA5
+    - EPHA7
+    - EPHB1
+    - EPHB4
+    - EPHB6
+    - EPS15
+    - ESCO2
+    - ETF1
+    - ETNK1
+    - ETS1
+    - ETS2
+    - EWSR1
+    - EXT1
+    - EXT2
+    - EYA1
+    - EZR
+    - FAF1
+    - FAM131B
+    - FAM135B
+    - FAM175A
+    - FAM46C
+    - FAM47C
+    - FAM58A
+    - FANCA
+    - FANCD2
+    - FANCE
+    - FANCF
+    - FANCG
+    - FANCL
+    - FAT1
+    - FAT3
+    - FAT4
+    - FBLN2
+    - FBN1
+    - FBN2
+    - FBXO11
+    - FBXW7
+    - FCGR2B
+    - FCRL4
+    - FEN1
+    - FES
+    - FEV
+    - FGF10
+    - FGF12
+    - FGF14
+    - FGF19
+    - FGF23
+    - FGF3
+    - FGF4
+    - FGF6
+    - FGF7
+    - FGF8
+    - FGF9
+    - FH
+    - FHIT
+    - FIP1L1
+    - FITM2
+    - FLCN
+    - FLG
+    - FLNA
+    - FLNB
+    - FLNC
+    - FLT3LG
+    - FNBP1
+    - FOCAD
+    - FOXA2
+    - FOXC1
+    - FOXF1
+    - FOXH1
+    - FOXI1
+    - FOXJ1
+    - FOXK1
+    - FOXK2
+    - FOXL2
+    - FOXM1
+    - FOXN1
+    - FOXO4
+    - FOXQ1
+    - FOXR1
+    - FOXR2
+    - FRK
+    - FRS2
+    - FRYL
+    - FSTL3
+    - FUBP1
+    - FUS
+    - FZD2
+    - FZD7
+    - FZR1
+    - G6PC3
+    - GAB1
+    - GAB2
+    - GABRA6
+    - GADD45B
+    - GALNT12
+    - GAS6
+    - GAS7
+    - GATA5
+    - GBA
+    - GCN1
+    - GID4
+    - GNA11
+    - GNA12
+    - GNA13
+    - GNAI2
+    - GNAQ
+    - GNAS
+    - GNB1
+    - GNG4
+    - GOPC
+    - GPC3
+    - GPC5
+    - GPHN
+    - GPR124
+    - GPS2
+    - GREM1
+    - GRIN2A
+    - GRM3
+    - GRP
+    - GSE1
+    - GTF2I
+    - H3F3A
+    - H3F3B
+    - H3F3C
+    - HCFC1
+    - HDAC7
+    - HDAC8
+    - HDAC9
+    - HEY1
+    - HEYL
+    - HGF
+    - HIF3A
+    - HIP1
+    - HIST1H1B
+    - HIST1H1C
+    - HIST1H1D
+    - HIST1H1E
+    - HIST1H2AC
+    - HIST1H2AG
+    - HIST1H2AL
+    - HIST1H2AM
+    - HIST1H2BC
+    - HIST1H2BD
+    - HIST1H2BE
+    - HIST1H2BF
+    - HIST1H2BG
+    - HIST1H2BH
+    - HIST1H2BI
+    - HIST1H2BJ
+    - HIST1H2BK
+    - HIST1H2BL
+    - HIST1H2BM
+    - HIST1H2BN
+    - HIST1H2BO
+    - HIST1H3A
+    - HIST1H3B
+    - HIST1H3C
+    - HIST1H3D
+    - HIST1H3E
+    - HIST1H3F
+    - HIST1H3G
+    - HIST1H3H
+    - HIST1H3I
+    - HIST1H3J
+    - HIST1H4A
+    - HIST1H4B
+    - HIST1H4C
+    - HIST1H4D
+    - HIST1H4E
+    - HIST1H4F
+    - HIST1H4G
+    - HIST1H4H
+    - HIST1H4I
+    - HIST1H4J
+    - HIST1H4K
+    - HIST1H4L
+    - HIST2H2AC
+    - HIST2H2BE
+    - HIST2H3A
+    - HIST2H3C
+    - HIST2H3D
+    - HIST3H3
+    - HLA-A
+    - HLA-B
+    - HLA-C
+    - HLF
+    - HMGA1
+    - HMGA2
+    - HMGN2P46
+    - HNF1A
+    - HNF1B
+    - HNRNPA2B1
+    - HOOK3
+    - HOXA11
+    - HOXA13
+    - HOXA9
+    - HOXB13
+    - HOXC11
+    - HOXC13
+    - HOXD11
+    - HOXD13
+    - HRAS
+    - HSP90AA1
+    - HSP90AB1
+    - HSPH1
+    - HTR4
+    - HUWE1
+    - ICOSLG
+    - ID3
+    - IDH3A
+    - IFNA1
+    - IFNA10
+    - IFNA13
+    - IFNA14
+    - IFNA16
+    - IFNA17
+    - IFNA2
+    - IFNA21
+    - IFNA4
+    - IFNA5
+    - IFNA6
+    - IFNA7
+    - IFNA8

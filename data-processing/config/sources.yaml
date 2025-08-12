@@ -1,0 +1,102 @@
+# Data source configuration for OncoHotspot ETL pipeline
+
+sources:
+  cbioportal:
+    base_url: "https://www.cbioportal.org/api"
+    endpoints:
+      studies: "/studies"
+      mutations: "/molecular-profiles/{profile_id}/mutations"
+      genes: "/genes"
+      clinical_data: "/studies/{study_id}/clinical-data"
+    rate_limit:
+      requests_per_second: 10
+      retry_attempts: 3
+      retry_delay: 1
+    
+  cosmic_nih:
+    base_url: "https://clinicaltables.nlm.nih.gov/api/cosmic/v3/search"
+    max_results: 10000
+    rate_limit:
+      requests_per_second: 5
+      retry_attempts: 2
+      retry_delay: 2
+    
+  oncokb:
+    base_url: "https://www.oncokb.org/api/v1"
+    requires_token: true
+    endpoints:
+      annotations: "/annotate/mutations/byProteinChange"
+      genes: "/genes"
+    
+# Target genes for extraction
+target_genes:
+  oncogenes:
+    - KRAS
+    - EGFR
+    - BRAF
+    - PIK3CA
+    - MYC
+    - ALK
+    - MET
+    - HER2
+    - FLT3
+    - KIT
+    - RET
+    - NRAS
+    - JAK2
+    - FGFR1
+    - FGFR2
+    - FGFR3
+    - CDK4
+    - CDK6
+    - BCL2
+    - MDM2
+    
+  tumor_suppressors:
+    - TP53
+    - APC
+    - PTEN
+    - RB1
+    - VHL
+    - BRCA1
+    - BRCA2
+    - MLH1
+    - MSH2
+    - STK11
+    
+# Cancer studies to include
+target_studies:
+  cbioportal:
+    # All 33 TCGA Pan-Cancer Atlas 2018 studies
+    - acc_tcga_pan_can_atlas_2018      # Adrenocortical Carcinoma
+    - blca_tcga_pan_can_atlas_2018     # Bladder Urothelial Carcinoma
+    - brca_tcga_pan_can_atlas_2018     # Breast Invasive Carcinoma
+    - cesc_tcga_pan_can_atlas_2018     # Cervical Squamous Cell Carcinoma
+    - chol_tcga_pan_can_atlas_2018     # Cholangiocarcinoma
+    - coadread_tcga_pan_can_atlas_2018 # Colorectal Adenocarcinoma
+    - dlbc_tcga_pan_can_atlas_2018     # Diffuse Large B-cell Lymphoma
+    - esca_tcga_pan_can_atlas_2018     # Esophageal Carcinoma
+    - gbm_tcga_pan_can_atlas_2018      # Glioblastoma Multiforme
+    - hnsc_tcga_pan_can_atlas_2018     # Head and Neck Squamous Cell
+    - kich_tcga_pan_can_atlas_2018     # Kidney Chromophobe
+    - kirc_tcga_pan_can_atlas_2018     # Kidney Clear Cell Carcinoma
+    - kirp_tcga_pan_can_atlas_2018     # Kidney Papillary Cell Carcinoma
+    - laml_tcga_pan_can_atlas_2018     # Acute Myeloid Leukemia
+    - lgg_tcga_pan_can_atlas_2018      # Brain Lower Grade Glioma
+    - lihc_tcga_pan_can_atlas_2018     # Liver Hepatocellular Carcinoma
+    - luad_tcga_pan_can_atlas_2018     # Lung Adenocarcinoma
+    - lusc_tcga_pan_can_atlas_2018     # Lung Squamous Cell Carcinoma
+    - meso_tcga_pan_can_atlas_2018     # Mesothelioma
+    - ov_tcga_pan_can_atlas_2018       # Ovarian Serous Cystadenocarcinoma
+    - paad_tcga_pan_can_atlas_2018     # Pancreatic Adenocarcinoma
+    - pcpg_tcga_pan_can_atlas_2018     # Pheochromocytoma and Paraganglioma
+    - prad_tcga_pan_can_atlas_2018     # Prostate Adenocarcinoma
+    - sarc_tcga_pan_can_atlas_2018     # Sarcoma
+    - skcm_tcga_pan_can_atlas_2018     # Skin Cutaneous Melanoma
+    - stad_tcga_pan_can_atlas_2018     # Stomach Adenocarcinoma
+    - tgct_tcga_pan_can_atlas_2018     # Testicular Germ Cell Tumors
+    - thca_tcga_pan_can_atlas_2018     # Thyroid Carcinoma
+    - thym_tcga_pan_can_atlas_2018     # Thymoma
+    - ucec_tcga_pan_can_atlas_2018     # Uterine Corpus Endometrial Carcinoma
+    - ucs_tcga_pan_can_atlas_2018      # Uterine Carcinosarcoma
+    - uvm_tcga_pan_can_atlas_2018      # Uveal Melanoma

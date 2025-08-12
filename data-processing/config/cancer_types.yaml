@@ -1,0 +1,89 @@
+# Cancer type standardization mappings
+
+cancer_type_mappings:
+  # Lung cancers
+  LUAD: NSCLC
+  LUSC: NSCLC
+  "Lung Adenocarcinoma": NSCLC
+  "Lung Squamous Cell Carcinoma": NSCLC
+  "Non-Small Cell Lung Cancer": NSCLC
+  SCLC: SCLC
+  "Small Cell Lung Cancer": SCLC
+  
+  # Breast cancers
+  BRCA: Breast
+  "Breast Invasive Carcinoma": Breast
+  "Breast Cancer": Breast
+  "Invasive Breast Carcinoma": Breast
+  
+  # Colorectal cancers
+  COAD: Colorectal
+  READ: Colorectal
+  COADREAD: Colorectal
+  "Colon Adenocarcinoma": Colorectal
+  "Rectum Adenocarcinoma": Colorectal
+  "Colorectal Adenocarcinoma": Colorectal
+  
+  # Skin cancers
+  SKCM: Melanoma
+  "Skin Cutaneous Melanoma": Melanoma
+  "Cutaneous Melanoma": Melanoma
+  
+  # Pancreatic cancers
+  PAAD: Pancreatic
+  "Pancreatic Adenocarcinoma": Pancreatic
+  "Pancreatic Cancer": Pancreatic
+  
+  # Liver cancers
+  LIHC: Liver
+  "Liver Hepatocellular Carcinoma": Liver
+  HCC: Liver
+  
+  # Ovarian cancers
+  OV: Ovarian
+  "Ovarian Serous Cystadenocarcinoma": Ovarian
+  "Ovarian Cancer": Ovarian
+  
+  # Brain cancers
+  GBM: Glioblastoma
+  LGG: "Lower Grade Glioma"
+  "Glioblastoma Multiforme": Glioblastoma
+  
+  # Kidney cancers
+  KIRC: Kidney
+  KIRP: Kidney
+  KICH: Kidney
+  "Kidney Renal Clear Cell Carcinoma": Kidney
+  "Kidney Renal Papillary Cell Carcinoma": Kidney
+  
+  # Bladder cancers
+  BLCA: Bladder
+  "Bladder Urothelial Carcinoma": Bladder
+  
+  # Prostate cancers
+  PRAD: Prostate
+  "Prostate Adenocarcinoma": Prostate
+  
+  # Stomach cancers
+  STAD: Gastric
+  "Stomach Adenocarcinoma": Gastric
+  
+  # Head and neck cancers
+  HNSC: "Head and Neck"
+  "Head and Neck Squamous Cell Carcinoma": "Head and Neck"
+  
+  # Blood cancers
+  LAML: AML
+  "Acute Myeloid Leukemia": AML
+  DLBC: "Diffuse Large B-cell Lymphoma"
+  MM: "Multiple Myeloma"
+  
+  # Thyroid cancers
+  THCA: Thyroid
+  "Thyroid Carcinoma": Thyroid
+  
+  # Other
+  UCEC: "Uterine"
+  "Uterine Corpus Endometrial Carcinoma": "Uterine"
+  TGCT: "Testicular"
+  "Testicular Germ Cell Tumors": "Testicular"
