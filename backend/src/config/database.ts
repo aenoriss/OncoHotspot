@@ -2,9 +2,12 @@ import sqlite3 from 'sqlite3';
 import path from 'path';
 
 // Use absolute path to the database file
-const dbPath = process.env.NODE_ENV === 'production' 
-  ? path.resolve(__dirname, '../../../database/oncohotspot.db')
-  : path.resolve(__dirname, '../../../database/oncohotspot.db');
+// In production (dist), we need to go up one more level
+const dbPath = process.env.DATABASE_PATH 
+  ? path.resolve(process.env.DATABASE_PATH)
+  : process.env.NODE_ENV === 'production'
+  ? path.resolve(__dirname, '../../database/oncohotspot.db')  // dist/config -> database
+  : path.resolve(__dirname, '../../../database/oncohotspot.db'); // src/config -> database
 
 // Enable verbose mode for development
 const sqlite = process.env.NODE_ENV === 'development' ? sqlite3.verbose() : sqlite3;
@@ -14,9 +17,28 @@ export class Database {
   private db: sqlite3.Database;
 
   private constructor() {
+    console.log('Attempting to connect to database at:', dbPath);
+    console.log('Current directory:', __dirname);
+    console.log('NODE_ENV:', process.env.NODE_ENV);
+    console.log('DATABASE_PATH env:', process.env.DATABASE_PATH);
+    
     this.db = new sqlite.Database(dbPath, (err) => {
       if (err) {
         console.error('Error opening database:', err.message);
+        console.error('Failed path was:', dbPath);
+        
+        // Check if file exists
+        const fs = require('fs');
+        if (!fs.existsSync(dbPath)) {
+          console.error('Database file does not exist at path:', dbPath);
+          console.error('Contents of database directory:');
+          const dbDir = path.dirname(dbPath);
+          if (fs.existsSync(dbDir)) {
+            console.error(fs.readdirSync(dbDir));
+          } else {
+            console.error('Database directory does not exist:', dbDir);
+          }
+        }
         throw err;
       }
       console.log('Connected to SQLite database at:', dbPath);
