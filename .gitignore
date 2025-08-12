@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+*/node_modules/
+**/node_modules/
+
+# Build outputs  
+dist/
+build/
+*/dist/
+*/build/
+
+# Cache
+.cache/
+*/.cache/
+**/.cache/
+
+# Large data files - EXCLUDE ALL
+data-processing/bronze/data/
+data-processing/silver/data/
+data-processing/gold/data/
+data-processing/logs/*.json
+data-processing/test_results.json
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!*.config.json
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+
+# Temporary
+*.tmp
+*.temp
+.tmp/
+*.tar.gz
