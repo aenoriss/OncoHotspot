@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  oncohotspot:
+    build: .
+    ports:
+      - "3001:3001"
+      - "3000:3000"
+    volumes:
+      - ./database:/app/database
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - DATABASE_PATH=/app/database/oncohotspot.db
+    restart: unless-stopped
