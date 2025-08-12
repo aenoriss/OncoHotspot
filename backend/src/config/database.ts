@@ -1,13 +1,33 @@
 import sqlite3 from 'sqlite3';
 import path from 'path';
 
-// Use absolute path to the database file
-// In production (dist), we need to go up one more level
-const dbPath = process.env.DATABASE_PATH 
-  ? path.resolve(process.env.DATABASE_PATH)
-  : process.env.NODE_ENV === 'production'
-  ? path.resolve(__dirname, '../../database/oncohotspot.db')  // dist/config -> database
-  : path.resolve(__dirname, '../../../database/oncohotspot.db'); // src/config -> database
+// Try multiple possible database locations
+const fs = require('fs');
+const possiblePaths = [
+  process.env.DATABASE_PATH,
+  path.resolve(__dirname, '../../database/oncohotspot.db'),      // dist/config -> database
+  path.resolve(__dirname, '../database/oncohotspot.db'),         // dist -> database  
+  path.resolve(__dirname, '../../../database/oncohotspot.db'),   // src/config -> database
+  path.resolve('/app/database/oncohotspot.db'),                  // absolute path in container
+  path.resolve('/app/backend/database/oncohotspot.db'),          // alternate absolute path
+  path.resolve('/app/backend/dist/database/oncohotspot.db'),     // copied to dist
+  path.resolve('./database/oncohotspot.db'),                     // relative to cwd
+].filter(Boolean);
+
+// Find the first path that exists
+let dbPath: string = '';
+for (const p of possiblePaths) {
+  if (p && fs.existsSync(p)) {
+    dbPath = p;
+    console.log('Found database at:', dbPath);
+    break;
+  }
+}
+
+if (!dbPath) {
+  console.error('Database not found in any of these locations:', possiblePaths);
+  dbPath = possiblePaths.find(p => p) || path.resolve(__dirname, '../../database/oncohotspot.db'); // fallback
+}
 
 // Enable verbose mode for development
 const sqlite = process.env.NODE_ENV === 'development' ? sqlite3.verbose() : sqlite3;
