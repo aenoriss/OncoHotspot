@@ -2,7 +2,7 @@
 FROM node:18-alpine
 
 # Install dependencies for runtime database download
-RUN apk add --no-cache git git-lfs bash
+RUN apk add --no-cache git git-lfs bash curl sqlite
 
 WORKDIR /app
 
