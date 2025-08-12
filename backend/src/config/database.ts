@@ -6,10 +6,12 @@ import { Pool } from 'pg';
 const fs = require('fs');
 
 // Railway provides RAILWAY_VOLUME_MOUNT_PATH for volumes
-const volumePath = process.env.RAILWAY_VOLUME_MOUNT_PATH;
+const volumePath = process.env.RAILWAY_VOLUME_MOUNT_PATH || '/data';
 const possiblePaths = [
-  process.env.DATABASE_PATH,
-  volumePath ? path.join(volumePath, 'oncohotspot.db') : null,   // Railway volume mount
+  process.env.DATABASE_PATH?.replace('${RAILWAY_VOLUME_MOUNT_PATH}', volumePath)
+                            .replace('${{RAILWAY_VOLUME_MOUNT_PATH}}', volumePath)
+                            .replace('{RAILWAY_VOLUME_MOUNT_PATH}', volumePath),
+  path.join(volumePath, 'oncohotspot.db'),                        // Railway volume mount at /data
   path.resolve(__dirname, '../../database/oncohotspot.db'),      // dist/config -> database
   path.resolve(__dirname, '../database/oncohotspot.db'),         // dist -> database  
   path.resolve(__dirname, '../../../database/oncohotspot.db'),   // src/config -> database

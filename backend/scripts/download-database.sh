@@ -3,7 +3,7 @@
 # Download database from GitHub using Git LFS at runtime
 # This runs AFTER deployment when the container starts
 
-DB_PATH="${RAILWAY_VOLUME_MOUNT_PATH:-/app/database}"
+DB_PATH="${RAILWAY_VOLUME_MOUNT_PATH:-/data}"
 DB_FILE="$DB_PATH/oncohotspot.db"
 
 echo "Database path: $DB_PATH"
