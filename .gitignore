@@ -14,24 +14,12 @@ build/
 */.cache/
 **/.cache/
 
-# Large data files - EXCLUDE ALL
-data-processing/bronze/data/
-data-processing/silver/data/
-data-processing/gold/data/
+# Test results and logs
 data-processing/logs/*.json
 data-processing/test_results.json
-*.json
-!package.json
-!package-lock.json
-!tsconfig.json
-!*.config.json
 
-# Database files
-*.db
-*.db-shm
-*.db-wal
-*.sqlite
-*.sqlite3
+# NOTE: Database and data files are tracked with Git LFS
+# See .gitattributes for LFS configuration
 
 # Logs
 *.log
